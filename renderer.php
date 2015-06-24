@@ -126,6 +126,6 @@ class qtype_javaunittest_format_plain_renderer extends plugin_renderer_base {
                         'type' => 'hidden',
                         'name' => $inputname . 'format',
                         'value' => FORMAT_PLAIN 
-                ) );
+                ) ) . get_string ( 'scriptquestionform', 'qtype_javaunittest' );
     }
 }

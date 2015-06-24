@@ -16,6 +16,8 @@ define ( 'FEEDBACK_NOTHING', -1 );
 define ( 'FEEDBACK_ONLY_TIMES', 0 );
 define ( 'FEEDBACK_TIMES_COUNT_OF_TESTS', 1 );
 define ( 'FEEDBACK_ALL_EXCEPT_STACKTRACE', 2 );
+// PRENCIS EDIT
+define ( 'FEEDBACK_UNIT_TEST_RESULTS', 3 );
 
 /**
  * The javaunittest question type.
@@ -96,7 +98,8 @@ class qtype_javaunittest extends question_type {
                 FEEDBACK_NOTHING => get_string ( 'feedback_nothing', 'qtype_javaunittest' ),
                 FEEDBACK_ONLY_TIMES => get_string ( 'feedback_only_times', 'qtype_javaunittest' ),
                 FEEDBACK_TIMES_COUNT_OF_TESTS => get_string ( 'feedback_times_count_of_tests', 'qtype_javaunittest' ),
-                FEEDBACK_ALL_EXCEPT_STACKTRACE => get_string ( 'feedback_all_except_stacktrace', 'qtype_javaunittest' ) 
+                FEEDBACK_ALL_EXCEPT_STACKTRACE => get_string ( 'feedback_all_except_stacktrace', 'qtype_javaunittest' ),
+                FEEDBACK_UNIT_TEST_RESULTS => get_string ( 'feedback_results', 'qtype_javaunittest' )  // EDIT PRENCIS
         );
         
         return $levels;

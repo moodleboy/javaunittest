@@ -63,6 +63,7 @@ class qtype_javaunittest_edit_form extends question_edit_form {
         $mform->setType ( 'junitcode', PARAM_RAW );
         $mform->addRule ( 'junitcode', null, 'required' );
         $mform->addHelpButton ( 'junitcode', 'uploadtestclass', 'qtype_javaunittest' );
+		$mform->addElement('static', '', '', get_string ( 'scripteditform', 'qtype_javaunittest' ));
     }
     public function qtype () {
         return 'javaunittest';

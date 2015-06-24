@@ -82,3 +82,62 @@ $string['debug_heading'] = 'Local debug information';
 $string['debug_heading_desc'] = 'Enable only for testing! (only local java execution)';
 $string['debug_logfile'] = 'Save logfiles to temporary directory';
 $string['debug_nocleanup'] = 'Do not clean up temporary files and directories';
+
+$string['feedback_results'] = 'Show results of Unit Tests';
+$string['scripteditform'] = "
+<script>
+
+function enableTab(id) {
+    var el = document.querySelector(id);
+    el.onkeydown = function(e) {
+        if (e.keyCode === 9) { 
+
+            var val = this.value,
+                start = this.selectionStart,
+                end = this.selectionEnd;
+            
+            this.value = val.substring(0, start) + '\t' + val.substring(end);
+
+            this.selectionStart = this.selectionEnd = start + 1;
+
+            return false;
+
+        }
+    };
+}
+
+
+enableTab('#page-question-type-javaunittest #id_givencode');
+enableTab('#page-question-type-javaunittest #id_junitcode');
+
+
+</script>
+";
+
+$string['scriptquestionform'] = "
+<script>
+
+function enableTab(id) {
+    var el = document.querySelector(id);
+    el.onkeydown = function(e) {
+        if (e.keyCode === 9) { 
+
+            var val = this.value,
+                start = this.selectionStart,
+                end = this.selectionEnd;
+            
+            this.value = val.substring(0, start) + '\t' + val.substring(end);
+
+            this.selectionStart = this.selectionEnd = start + 1;
+
+            return false;
+
+        }
+    };
+}
+
+enableTab('#page-mod-quiz-attempt textarea.qtype_javaunittest_plain');
+
+
+</script>
+";
