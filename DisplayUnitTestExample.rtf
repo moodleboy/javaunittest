@@ -1,139 +1,131 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier;}
-{\colortbl;\red255\green255\blue255;\red0\green45\blue153;}
-\margl1440\margr1440\vieww10800\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+Using The Following Test Class
 
-\f0\b\fs24 \cf0 Using The Following Test Class
-\b0 \
-\
-Here is an example of how the "Display Unit Test Results" work.\
-\
-Suppose you use the following Unit Test:\
-\
+Here is an example of how the "Display Unit Test Results" work.
 
-\f1 \cf2 import junit.framework.TestCase;\
-\
-public class BlackjackTest extends TestCase\
-\{\
-    public void testBlackjack1() \{\
-        assertEquals("blackjack(19, 21)", 21,Blackjack.blackjack(19, 21));\
-    \}\
-//Hidden Test\
-    public void testBlackjack1h() \{\
-        assertEquals("Hide", 21,Blackjack.blackjack(16, 21));\
-    \}\
-\
-    public void testBlackjack2() \{\
-        assertEquals("blackjack(21, 19)",21,Blackjack.blackjack(21, 19));\
-    \}\
-//Hidden Test\
-    public void testBlackjack2h() \{\
-        assertEquals("Hide", 21,Blackjack.blackjack(21, 7));\
-    \}\
-\
-    public void testBlackjack3() \{\
-        assertEquals("blackjack(19, 22)",19,Blackjack.blackjack(19, 22));\
-    \}\
-\
-    public void testBlackjack4() \{\
-        assertEquals("blackjack(22, 19)",19,Blackjack.blackjack(22, 19));\
-    \}\
-\
-    public void testBlackjack5() \{\
-        assertEquals("blackjack(22, 50)",0,Blackjack.blackjack(22, 50));\
-    \}\
-\
-    public void testBlackjack6() \{\
-        assertEquals("blackjack(22, 22)",0,Blackjack.blackjack(22, 22));\
-    \}\
-\
-    public void testBlackjack7() \{\
-        assertEquals("blackjack(33, 1)",1,Blackjack.blackjack(33, 1));\
-    \}\
-\
-    public void testBlackjack8() \{\
-        assertEquals("blackjack(1, 2)",2,Blackjack.blackjack(1, 2));\
-    \}\
-\
-    public void testBlackjack9() \{\
-        assertEquals("blackjack(34, 33)", 0,Blackjack.blackjack(34, 33));\
-    \}\
-\
-    public void testBlackjack10() \{\
-        assertEquals("blackjack(17, 19)",19,Blackjack.blackjack(17, 19));\
-    \}\
-\
-    public void testBlackjack11() \{\
-        assertEquals("blackjack(18, 17)",18,Blackjack.blackjack(18, 17));\
-    \}\
-//Hidden\
-    public void testBlackjack11h() \{\
-        assertEquals("Hide)",19,Blackjack.blackjack(19, 1));\
-    \}\
-\
-    public void testBlackjack12() \{\
-        assertEquals("blackjack(16, 23)",16,Blackjack.blackjack(16, 23));\
-    \}\
-\
-    public void testBlackjack13() \{\
-        assertEquals("blackjack(3, 4)", 4,Blackjack.blackjack(3, 4));\
-    \}\
-//Hidden\
-    public void testBlackjack13h() \{\
-        assertEquals("Hide", 7,Blackjack.blackjack(2, 7));\
-    \}\
-\
-    public void testBlackjack14() \{\
-        assertEquals("blackjack(3, 2)",3,Blackjack.blackjack(3, 2));\
-    \}\
-\
-    public void testBlackjack15() \{\
-        assertEquals("blackjack(21, 20)",21,Blackjack.blackjack(21, 20));\
-    \}\
-\
-\}\
+Suppose you use the following Unit Test:
+-------------------------------------------------
 
-\f0 \cf0 \
-\
-And the student enters the following code;\
-\
+        import junit.framework.TestCase;
+        
+        public class BlackjackTest extends TestCase
+        {
+            public void testBlackjack1() {
+                assertEquals("blackjack(19, 21)", 21,Blackjack.blackjack(19, 21));
+            }
+        //Hidden Test
+            public void testBlackjack1h() {
+                assertEquals("Hide", 21,Blackjack.blackjack(16, 21));
+            }
+        
+            public void testBlackjack2() {
+                assertEquals("blackjack(21, 19)",21,Blackjack.blackjack(21, 19));
+            }
+        //Hidden Test
+            public void testBlackjack2h() {
+                assertEquals("Hide", 21,Blackjack.blackjack(21, 7));
+            }
+        
+            public void testBlackjack3() {
+                assertEquals("blackjack(19, 22)",19,Blackjack.blackjack(19, 22));
+            }
+        
+            public void testBlackjack4() {
+                assertEquals("blackjack(22, 19)",19,Blackjack.blackjack(22, 19));
+            }
+        
+            public void testBlackjack5() {
+                assertEquals("blackjack(22, 50)",0,Blackjack.blackjack(22, 50));
+            }
+        
+            public void testBlackjack6() {
+                assertEquals("blackjack(22, 22)",0,Blackjack.blackjack(22, 22));
+            }
+        
+            public void testBlackjack7() {
+                assertEquals("blackjack(33, 1)",1,Blackjack.blackjack(33, 1));
+            }
+        
+            public void testBlackjack8() {
+                assertEquals("blackjack(1, 2)",2,Blackjack.blackjack(1, 2));
+            }
+        
+            public void testBlackjack9() {
+                assertEquals("blackjack(34, 33)", 0,Blackjack.blackjack(34, 33));
+            }
+        
+            public void testBlackjack10() {
+                assertEquals("blackjack(17, 19)",19,Blackjack.blackjack(17, 19));
+            }
+        
+            public void testBlackjack11() {
+                assertEquals("blackjack(18, 17)",18,Blackjack.blackjack(18, 17));
+            }
+        //Hidden
+            public void testBlackjack11h() {
+                assertEquals("Hide)",19,Blackjack.blackjack(19, 1));
+            }
+        
+            public void testBlackjack12() {
+                assertEquals("blackjack(16, 23)",16,Blackjack.blackjack(16, 23));
+            }
+        
+            public void testBlackjack13() {
+                assertEquals("blackjack(3, 4)", 4,Blackjack.blackjack(3, 4));
+            }
+        //Hidden
+            public void testBlackjack13h() {
+                assertEquals("Hide", 7,Blackjack.blackjack(2, 7));
+            }
+        
+            public void testBlackjack14() {
+                assertEquals("blackjack(3, 2)",3,Blackjack.blackjack(3, 2));
+            }
+        
+            public void testBlackjack15() {
+                assertEquals("blackjack(21, 20)",21,Blackjack.blackjack(21, 20));
+            }
+        
+        }
 
-\f1 \cf2 class Blackjack\
-\{\
-    public static int blackjack(int a, int b) \{\
-\
-       if ( a > b )\
-          return a;\
-       return 0;\
-    \}\
-\
-\}\
+-----------------------------------------------
+And the student enters the following code;
+-----------------------------------------------
+        
+        class Blackjack
+        {
+            public static int blackjack(int a, int b) {
+        
+               if ( a > b )
+                  return a;
+               return 0;
+            }
+        
+        }
 
-\f0 \cf0 \
-The results will be displayed as follows:\
-
-\f1 \cf2 \
-compiling... [1.4s]\
-running... [0.3s]\
-\
-Tests: 19\
-Failures: 0\
-Errors: 11\
-\
-\
-Results of Unit Tests:\
-\
-    blackjack(17, 19) => Expected: 19 Actual: 0\
-    blackjack(16, 23) => Expected: 16 Actual: 0\
-    blackjack(3, 4) => Expected: 4 Actual: 0\
-    blackjack(19, 21) => Expected: 21 Actual: 0\
-    blackjack(19, 22) => Expected: 19 Actual: 0\
-    blackjack(22, 19) => Expected: 19 Actual: 22\
-    blackjack(33, 1) => Expected: 1 Actual: 33\
-    blackjack(1, 2) => Expected: 2 Actual: 0\
-    blackjack(34, 33) => Expected: 0 Actual: 34\
-    2 other tests failed\
-\
-\
-PARTIALLY CORRECT ANSWER: Some answers are correct, some not.}
+------------------------------------------------
+The results will be displayed as follows:
+------------------------------------------------
+        
+        compiling... [1.4s]
+        running... [0.3s]
+        
+        Tests: 19
+        Failures: 0
+        Errors: 11
+        
+        
+        Results of Unit Tests:
+        
+            blackjack(17, 19) => Expected: 19 Actual: 0
+            blackjack(16, 23) => Expected: 16 Actual: 0
+            blackjack(3, 4) => Expected: 4 Actual: 0
+            blackjack(19, 21) => Expected: 21 Actual: 0
+            blackjack(19, 22) => Expected: 19 Actual: 0
+            blackjack(22, 19) => Expected: 19 Actual: 22
+            blackjack(33, 1) => Expected: 1 Actual: 33
+            blackjack(1, 2) => Expected: 2 Actual: 0
+            blackjack(34, 33) => Expected: 0 Actual: 34
+            2 other tests failed
+        
+        
+        PARTIALLY CORRECT ANSWER: Some answers are correct, some not.
