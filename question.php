@@ -156,6 +156,9 @@ class qtype_javaunittest_question extends question_graded_automatically {
             $ret = $this->remote_execute ( $response );
         }
         
+		//PRENCIS EDIT
+		$test_cases = array_key_exists( 'junitoutput' , $ret ) ? $ret['junitoutput'] : '';
+
         if ( $ret['error'] ) {
             if ( $ret['errortype'] == 'COMPILE_STUDENT_ERROR' ) {
                 $feedback = get_string ( 'CE', 'qtype_javaunittest' ) . '<br><pre>' .
@@ -210,6 +213,46 @@ class qtype_javaunittest_question extends question_graded_automatically {
                     if ( $found ) {
                         $feedback .= '<pre>' . htmlspecialchars ( $matches[1] ) . '</pre>';
                         $feedback .= "<br>\n";
+                    } else {
+                        $feedback .= '<pre>' . htmlspecialchars ( $output ) . '</pre>';
+                        $feedback .= "<br>\n";
+                    }
+                }
+                //PRENCIS EDIT
+                if ( $this->feedbacklevel == FEEDBACK_UNIT_TEST_RESULTS ) {
+                    $matches = array ();
+                    $found = preg_match ( '@(.*)There (were|was) (\d*) failure(s?):\n@s', $output, $matches );
+                    if ( $found ) {
+                        $test_cases = str_replace('<br>', '', $test_cases);
+						$test_cases = str_replace('<', '', $test_cases);
+						$test_cases = str_replace('>', '', $test_cases);
+						$test_cases = str_replace('[', '<b>', $test_cases);
+						$test_cases = str_replace(']', '</b>', $test_cases);
+						
+						preg_match_all('/Error: .*$/m',$test_cases,$matches_expected);
+						$feedback .= "<div class=\"feedback_results\"><p>Results of Unit Tests:</p><ul>"; 
+						$hiddenerrorcount = 0;
+						foreach ( $matches_expected[0] as $v ) 
+						{
+							if (strpos($v, 'Error: Hide expected:') === false) {
+								if (strpos($v,'Error: expected:') === false) {
+									$v = str_replace("Error: ", "<span class=\"expected\">", $v);
+									$v = str_replace("expected:", " => Expected: <b>", $v);
+								} else {
+									$v = str_replace("Error: expected:", "<span class=\"expected\">Expected: <b>", $v);
+								}
+								$v = str_replace("but was:", "</b></span> <span class=\"actual\">Actual: <b>", $v);
+								$v .= "</b></span>";
+								$feedback .= "<li>" . $v . "</li>";
+							} else {
+								$hiddenerrorcount++;
+							}
+						}
+						if ($hiddenerrorcount > 0 ) {
+							$feedback .= "<li>" . $hiddenerrorcount . " other tests failed</li>";
+						}
+						$feedback .= "</ul></div><br>\n";
+						
                     } else {
                         $feedback .= '<pre>' . htmlspecialchars ( $output ) . '</pre>';
                         $feedback .= "<br>\n";
